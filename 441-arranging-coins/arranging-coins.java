@@ -7,16 +7,20 @@ class Solution {
             if(coins < 0) {
                 break;
             }
-            
+
             arrange++;
         }
-       /*  do {
-            n -= i;
-            i++;
-            if(n >= 0) arrange++;
-        }
-        while (n >= 0); */
-        
+
         return arrange;
+        /* if(n == 1) return n;
+
+        int arrange = 0;
+        do {
+            arrange++;
+            n -= arrange % n;
+        }
+        while(n > 1);
+        
+        return arrange - 1; */
     }
 }
