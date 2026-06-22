@@ -24,15 +24,13 @@ class Solution {
         if(head == null)
             return result;
 
-        // if(head != null && head.next != null) {
-            if(head.val != previous.val) {
-                result = new ListNode();
-                result.val = head.val;
-                result.next = iterate(head.next, result.next, head);
-            }
-            else 
-                result = iterate(head.next, result, previous);
-        // }
+        if(head.val != previous.val) {
+            result = new ListNode();
+            result.val = head.val;
+            result.next = iterate(head.next, result.next, head);
+        }
+        else 
+            result = iterate(head.next, result, previous);
 
         return result;
     }
