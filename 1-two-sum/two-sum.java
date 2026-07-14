@@ -1,6 +1,6 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int[] indices = new int[2];
+        /* int[] indices = new int[2];
         boolean isMatch = false;
         for(int i = 0; i < nums.length; i++) {
             for(int j = i + 1; j < nums.length; j++) {
@@ -16,6 +16,20 @@ class Solution {
                 break;
         }
 
-        return indices;
+        return indices; */
+
+        Map<Integer, Integer> seen = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            if(seen.containsKey(complement)) {
+                return new int[]{seen.get(complement), i};
+            }
+
+            seen.put(nums[i], i);
+        }
+
+        return new int[]{};
     }
 }
