@@ -1,7 +1,7 @@
 # Write your MySQL query statement below
 select Max(salary) as SecondHighestSalary 
     from Employee 
-    where salary < (
+    where salary not in (
         select Max(salary) 
             from Employee
     );
