@@ -8,10 +8,10 @@ class Solution {
         for (int num: nums)
             set.add(num);
             
-        while(!found) {
+        do {
             multiple = k * i++;
-            found = !set.contains(multiple);
         }
+        while(set.contains(multiple));
 
         return multiple;       
     }
