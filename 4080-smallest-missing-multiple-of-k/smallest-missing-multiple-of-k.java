@@ -4,9 +4,10 @@ class Solution {
         int i = 1;
         int multiple = 0;
 
-        Set<Integer> set = Arrays.stream(nums)
-                .boxed() // Converts int to Integer
-                .collect(Collectors.toSet());
+        Set<Integer> set = new HashSet<>();
+        for (int num: nums)
+            set.add(num);
+            
         while(!found) {
             multiple = k * i++;
             found = !set.contains(multiple);
